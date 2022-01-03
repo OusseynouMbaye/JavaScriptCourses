@@ -13,11 +13,12 @@
         .p1{padding:10px;}
         .m1{margin:10px;}
         .partie h2{color:red;}
+        .selected{background-color: lightslategray;}
     </style>
 </head>
 <body>
     <header>
-        <img src="./images/logo.png" alt="logo H2PROG" style="width:100px;float:left"/>
+        <img src="./images/logo.png" alt="logo H2PROG" style="width:100px;float:left" onclick="clickSurImage()" />
         <nav style="float:left">
             <ul>
                 <li style="display:inline"><a href="index.html">Accueil</a></li>
@@ -30,17 +31,17 @@
         <h1 style="text-align: center;">Site de présentation du DOM</h1>
         <div class="border p1 m1">
 
-            <div id="partie1" class="partie">
+            <div id="partie1" class="partie" onclick="changeColor(this)">
                 <h2>Partie 1</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aperiam modi inventore sit repellat cupiditate recusandae, 
                     odio excepturi consequuntur sed qui voluptates animi voluptatum, facere hic officiis totam? Reprehenderit, dignissimos?</p>
             </div>
-            <div id="partie2" class="partie">
+            <div id="partie2" class="partie" onclick="changeColor(this)">
                 <h2>Partie 2</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aperiam modi inventore sit repellat cupiditate recusandae, 
                     odio excepturi consequuntur sed qui voluptates animi voluptatum, facere hic officiis totam? Reprehenderit, dignissimos?</p>
             </div>
-            <div id="partie3" class="partie">
+            <div id="partie3" class="partie" onclick="changeColor(this)" >
                 <h2>Partie 3</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aperiam modi inventore sit repellat cupiditate recusandae, 
                     odio excepturi consequuntur sed qui voluptates animi voluptatum, facere hic officiis totam? Reprehenderit, dignissimos?</p>
@@ -49,7 +50,7 @@
         </div>
         <form method="POST">
             <label>Nom :</label>
-            <input type="text" id="nom" />
+            <input type="text" id="nom" onchange="changement()" />
             <label>Prenom :</label>
             <input type="text" id="prenom" />
         </form>
@@ -64,6 +65,7 @@
     <!-- <script src="./exoForm.js"></script> -->
     <!-- <script src="./remove/removeNoeud.js"></script> -->
     <!-- <script src="./remove/exoRemove.js"></script> -->
-    <script src="./modification_noeud/modify_noeud.js"></script>
+    <!-- <script src="./modification_noeud/modify_noeud.js"></script> -->
+    <script src="./les_evenements/les_attributs.js"></script>
 </body>
 </html>

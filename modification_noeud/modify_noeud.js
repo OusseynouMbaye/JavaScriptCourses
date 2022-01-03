@@ -48,7 +48,7 @@ my_form.appendChild(inputSubmit);
  */
 var parties =  document.querySelectorAll(".partie");
 for (let i = 0; i < parties.length; i++) {
-    parties[i].classList.remove("partie");
+    parties[i].classList.remove("partie"); // remove class
     var baliseH2 = parties[i].querySelector("h2")
     baliseH2.style.color = 'green';
     baliseH2.classList = 'border';
