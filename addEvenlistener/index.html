@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .border {
+        border: 2px solid black;
+        border-radius: 0.5em;
+      }
+      .p1 {
+        padding: 10px;
+      }
+      .m1 {
+        margin: 10px;
+      }
+      .partie h2 {
+        color: red;
+      }
+      .selected {
+        background-color: lightslategray;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="../images/logo.png"
+        alt="logo H2PROG"
+        style="width: 100px; float: left"
+        onclick="clicSurImage()"
+      />
+      <nav style="float: left">
+        <ul>
+          <li style="display: inline"><a href="index.html">Accueil</a></li>
+          <li style="display: inline"><a href="page1.html">Page 1</a></li>
+          <li style="display: inline"><a href="page2.html">Page 2</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main style="clear: both">
+      <h1 style="text-align: center">Site de présentation du DOM</h1>
+      <div class="border p1 m1">
+        <div id="partie1" class="partie">
+          <h2>Partie 1</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            aperiam modi inventore sit repellat cupiditate recusandae, odio
+            excepturi consequuntur sed qui voluptates animi voluptatum, facere
+            hic officiis totam? Reprehenderit, dignissimos?
+          </p>
+        </div>
+        <div id="partie2" class="partie">
+          <h2>Partie 2</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            aperiam modi inventore sit repellat cupiditate recusandae, odio
+            excepturi consequuntur sed qui voluptates animi voluptatum, facere
+            hic officiis totam? Reprehenderit, dignissimos?
+          </p>
+        </div>
+        <div id="partie3" class="partie">
+          <h2>Partie 3</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            aperiam modi inventore sit repellat cupiditate recusandae, odio
+            excepturi consequuntur sed qui voluptates animi voluptatum, facere
+            hic officiis totam? Reprehenderit, dignissimos?
+          </p>
+        </div>
+      </div>
+      <form>
+        <label>Nom</label>
+        <input type="text" name="nom" />
+        <label>Prenom</label>
+        <input type="text" name="prenom" />
+        <br />
+        <label>Niveau d'étude</label>
+        <select name="niveau">
+          <option value=""></option>
+          <option value="BEP">BEP</option>
+          <option value="CAP">CAP</option>
+          <option value="BAC">BAC</option>
+        </select>
+        <span id="verif" style="display: none"></span>
+        <br />
+        <input type="submit" value="Valider" />
+      </form>
+    </main>
+    <footer
+      style="
+        background-color: #283645;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      "
+    >
+      &#169; H2PROG 2021
+    </footer>
+    <script>
+      var titleH1 = document.querySelector("h1");
+      titleH1.addEventListener("click", function () {
+        console.log("tu clicke sur le title ");
+      });
+
+      var inputName = document.querySelector("input[name='nom']");
+      inputName.addEventListener('focus',function(){
+        inputName.style.backgroundColor = 'green';
+      });
+      inputName.addEventListener('blur',function(){
+        inputName.style.backgroundColor = 'grey';
+      })
+    </script>
+  </body>
+</html>
