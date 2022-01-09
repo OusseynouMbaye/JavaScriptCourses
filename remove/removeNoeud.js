@@ -13,8 +13,12 @@ var pPartie2 = document.querySelector("#partie2 p");
 var partie2 = document.querySelector("#partie2");
 // partie2.removeChild(pPartie2);
 
-/***** replace child******/
+/***** 
+ * 
+ * ! replace child
+ * 
+ * ****/
 var img  =  document.querySelector("img");
-img.src = "./images/logo.png";
+img.src = "../images/logo.png";
 img.style = "width:100px";
 partie2.replaceChild(img,pPartie2);
