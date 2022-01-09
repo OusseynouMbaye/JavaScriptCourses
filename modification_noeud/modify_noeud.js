@@ -1,18 +1,16 @@
-// partie1 = document.querySelector("#partie1");
-// console.log(partie1.attributes)
-// partie1.style.backgroundColor = "blue";
-// partie1.innerHTML = "NEW TEXTE"
+
 
 var my_form = document.querySelector("form");
-my_form.style.backgroundColor = 'grey'
+// my_form.style.backgroundColor = 'grey'
 // console.log(my_form.classList.);
 // console.log(my_form.attributes);
 /**
  * ? Creation du Get
  */
-// my_form.method = "GET";
+my_form.method = "GET";
 var inputsForm = my_form.querySelectorAll("input");
 for (let i = 0; i < inputsForm.length; i++) {
+  console.log(inputsForm[i])
   /**
    * ?  Creation des name des input
    *
@@ -27,24 +25,26 @@ inputSubmit.type = "submit";
 inputSubmit.value = "Valider";
 my_form.appendChild(inputSubmit);
 
-// /**
-//  * ? Recuperation des donnees
-//  */
-// var urlParams = new URLSearchParams(window.location.search);
+/**
+ * ? Recuperation des donnees
+ */
+var urlParams = new URLSearchParams(window.location.search);
 
-// var nom = urlParams.get("nom");
-// var prenom = urlParams.get("prenom");
-// /**
-//  * ? affichage des donnees
-//  */
-// var balsieP = document.createElement("p");
-// if (prenom !== null && nom != null) {
-//   balsieP.innerHTML = "Le prenom est " + prenom + " et le nom " + nom;
-//   my_form.insertAdjacentElement("afterend", balsieP);
-// }
+var nom = urlParams.get("nom");
+var prenom = urlParams.get("prenom");
+/**
+ * ? affichage des donnees
+ */
+var balsieP = document.createElement("p");
+if (prenom !== null && nom != null) {
+  balsieP.innerHTML = "Le prenom est " + prenom + " et le nom " + nom;
+  my_form.insertAdjacentElement("afterend", balsieP);
+}
 
 /**
  * ! Exo 
+ *  ? je remove toutes les classe
+ *  ? et ajoute des bordures au title h2 et backgorund color au text
  */
 var parties =  document.querySelectorAll(".partie");
 for (let i = 0; i < parties.length; i++) {
