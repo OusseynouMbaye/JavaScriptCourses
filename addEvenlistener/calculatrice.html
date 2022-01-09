@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invisible{display:none}
+        .border{
+            border:2px solid black;
+            border-radius: 0.5em;
+        }
+        .p1{padding:10px;}
+        .m1{margin:10px;}
+        .partie h2{color:red;}
+        .selected{background-color : lightslategray};
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="logo H2PROG" style="width:100px;float:left" onclick="clicSurImage()"/>
+        <nav style="float:left">
+            <ul>
+                <li style="display:inline"><a href="index.html">Accueil</a></li>
+                <li style="display:inline"><a href="page1.html">Page 1</a></li>
+                <li style="display:inline"><a href="page2.html">Page 2</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main style="clear:both">
+        <h1 style="text-align: center;">Site de présentation du DOM</h1>
+        <div class="border p1 m1">
+         
+            <form method="POST">
+                <input type="number" id="nb1" name="nb1" />
+                <select id="operation" name="operation">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="number" id="nb2" name="nb2" />
+                =
+                <span class="resultat"></span>
+                <br />
+                <input type="submit" />
+            </form>
+        </div>
+     
+    </main>
+    <footer style="background-color: #283645;color:white; text-align: center;padding:10px;">
+        &#169; H2PROG 2021
+    </footer>
+    <script>   
+    document.querySelector("form").addEventListener("submit",function(event){
+        event.preventDefault();
+        var nb1 = parseInt(document.querySelector("#nb1").value);
+        var nb2 = parseInt(document.querySelector("input[name='nb2']").value);
+        var operator = document.querySelector("#operation").value;
+        var showResultat = document.querySelector(".resultat");
+       
+        var resultat = 0;
+        switch (operator) {
+            case "+":
+                resultat = nb1 + nb2;
+                break;
+            case "-":
+                resultat = nb1 - nb2;
+                break;
+            case "*":
+                resultat = nb1 * nb2;
+                break;
+            case "/":
+                resultat = nb1 / nb2;
+                break;
+        
+            default: resultat = "Erreur de calcul !"
+                break;
+        }
+        showResultat.textContent = resultat;
+    })
+    </script>
+</body>
+</html>
