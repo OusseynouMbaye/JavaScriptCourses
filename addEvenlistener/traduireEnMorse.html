@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invisible{display:none}
+        .border{
+            border:2px solid black;
+            border-radius: 0.5em;
+        }
+        .p1{padding:10px;}
+        .m1{margin:10px;}
+        .partie h2{color:red;}
+        .selected{background-color : lightslategray};
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="logo H2PROG" style="width:100px;float:left" onclick="clicSurImage()"/>
+        <nav style="float:left">
+            <ul>
+                <li style="display:inline"><a href="index.html">Accueil</a></li>
+                <li style="display:inline"><a href="page1.html">Page 1</a></li>
+                <li style="display:inline"><a href="page2.html">Page 2</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main style="clear:both">
+        <h1 style="text-align: center;">Site de présentation du DOM</h1>
+        <div class="border p1 m1">
+            <button id="bP1">Partie1</button>
+            <button id="bP2">Partie2</button>
+            <button id="bP3">Partie3</button>
+            <div id="partie1" class="partie">
+                <h2>Partie 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aperiam modi inventore sit repellat cupiditate recusandae, 
+                    odio excepturi consequuntur sed qui voluptates animi voluptatum, facere hic officiis totam? Reprehenderit, dignissimos?</p>
+            </div>
+            <div id="partie2" class="partie">
+                <h2>Partie 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aperiam modi inventore sit repellat cupiditate recusandae, 
+                    odio excepturi consequuntur sed qui voluptates animi voluptatum, facere hic officiis totam? Reprehenderit, dignissimos?</p>
+            </div>
+            <div id="partie3" class="partie">
+                <h2>Partie 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aperiam modi inventore sit repellat cupiditate recusandae, 
+                    odio excepturi consequuntur sed qui voluptates animi voluptatum, facere hic officiis totam? Reprehenderit, dignissimos?</p>
+            </div>
+        </div>
+        <form method="POST">
+            <div>
+                <label>Votre message :</label>
+                <textarea id="message" name="message"  cols="100" rows="7"></textarea>
+            </div>
+            <div>
+                <label>Message codé :</label>
+                <textarea id="msgCode" name="msgCode"  cols="100" rows="7" disabled></textarea>
+            </div>
+        </form>
+    </main>
+    <footer style="background-color: #283645;color:white; text-align: center;padding:10px;">
+        &#169; H2PROG 2021
+    </footer>
+    <script> 
+    /**
+     * ! affichage du texte 
+     * 
+     */
+       var message = document.querySelector("#message");
+       var noeudMsgCode =  document.querySelector("textarea[name='msgCode']")  // ou document.querySelector("#msgCode");
+
+        message.addEventListener("keyup",function(event){
+           noeudMsgCode.value  = encodeMsg(message.value);
+        });
+       
+       /**
+        * 
+        *  ? Logic for the conversion
+        * 
+        **/
+      function encodeMsg(msg){
+          msgEncode = "";
+          for (var i = 0; i < msg.length; i++) {
+            msgEncode+= convertLetterToMorse(msg[i]) + " ";
+              
+          }
+        //   console.log(msgEncode)
+          return msgEncode;
+      }
+         function convertLetterToMorse(letter){
+             switch(letter.toLowerCase()){
+                 case 'a' : return "._";
+                 case 'b' : return "-...";
+                 case 'c' : return "-.-.";
+                 case 'd' : return "-..";
+                 case 'e' : return ".";
+                 case 'f' : return "..-.";
+                 case 'g' : return "--.";
+                 case 'h' : return "....";
+                 case 'i' : return "..";
+                 case 'j' : return ".---";
+                 case 'k' : return "-.-";
+                 case 'l' : return ".-..";
+                 case 'm' : return "--";
+                 case 'n' : return "-.";
+                 case 'o' : return "---";
+                 case 'p' : return ".--.";
+                 case 'q' : return "--.-";
+                 case 'r' : return ".-.";
+                 case 's' : return "...";
+                 case 't' : return "-";
+                 case 'u' : return "..-";
+                 case 'v' : return "-.";
+                 case 'w' : return ".--";
+                 case 'x' : return "-..-";
+                 case 'y' : return "-.--";
+                 case 'z' : return "--..";
+                 case ' ' : return " ";
+                 default : return "";
+             }
+
+         }
+    </script>
+</body>
+</html>
