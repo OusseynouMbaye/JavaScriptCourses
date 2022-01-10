@@ -9,7 +9,7 @@ monForm.innerHTML = contenu;
 // document.querySelector("#partie3").appendChild(monForm);
 document.querySelector("#partie3").insertAdjacentElement("beforebegin",monForm);
 
-var urlParams =  new URLSearchParams(window.location.search);
+var urlParams =  new URLSearchParams(window.location.search); // recupere donnes url
 var age = urlParams.get('age');
 var balsieP = document.createElement("p");
 if(age !== null){

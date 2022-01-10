@@ -48,13 +48,23 @@
             </div>
             <!-- <img src="./images/logo.png" alt="" srcset=""> -->
         </div>
-        <form method="POST">
-            <label>Nom :</label>
-            <input type="text" id="nom" onchange="changement()" />
-            <label>Prenom :</label>
-            <input type="text" id="prenom" />
+        <form>
+            <label>Nom</label>
+            <input type="text" name="nom"  onfocus="selectionFocus(this)" onblur="endFocus(this)" />
+            <label>Prenom</label>
+            <input type="text" name="prenom" onfocus="selectionFocus(this)"  onblur="endFocus(this)" />
+            <br />
+            <label>Niveau d'étude</label>
+            <select name="niveau" onchange="selectChange()">
+                <option value=""></option>
+                <option value="BEP">BEP</option>
+                <option value="CAP">CAP</option>
+                <option value="BAC">BAC</option>
+            </select>
+            <span id="verif" style="display: none;"></span>
+            <br />
+            <input type="submit" value="Valider" />
         </form>
-   
       
     </main>
     <footer style="background-color: #283645;color:white; text-align: center;padding:10px;">
@@ -63,9 +73,8 @@
     <!-- <script src="./main.js"></script>
     <script src="./placerNoeud.js"></script> -->
     <!-- <script src="./exoForm.js"></script> -->
-    <!-- <script src="./remove/removeNoeud.js"></script> -->
-    <!-- <script src="./remove/exoRemove.js"></script> -->
     <!-- <script src="./modification_noeud/modify_noeud.js"></script> -->
-    <script src="./les_evenements/les_attributs.js"></script>
+    <!-- <script src="./les_evenements/les_attributs.js"></script> -->
+    <script src="./les_evenements/Exo8.js"></script>
 </body>
 </html>
