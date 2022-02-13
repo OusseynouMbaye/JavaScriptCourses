@@ -1,0 +1,32 @@
+.grid{
+    display: grid;
+    grid-template-columns: 100%; /*50% 50%;*/
+    /* grid-template-rows: 200px 200px; */
+    align-items: center;
+    justify-items: center;
+}
+@media screen and (min-width:600px){
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-items: center;
+    }
+}
+@media screen and (min-width:800px){
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        justify-items: center;
+    }
+}
+.item{
+    height: 100px;
+    width: 100px;
+    background: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  50px 0;
+
+}
