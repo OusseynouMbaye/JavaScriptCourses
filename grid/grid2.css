@@ -1,0 +1,24 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* background: #222; */
+}
+
+.grid{
+    margin: 100px auto 0;
+    padding: 0 20px;
+    max-width: 1300px;
+    display: grid;
+    grid-gap: 10px;
+    /* grid-template-columns:  repeat(auto-fill, 200px);
+    grid-template-rows: max-content; 
+    grid-template-columns: repeat(6, 1fr);
+    ensuite donner les deux premiers items  grid-colum 3 span et le reste 2 span
+    */
+}

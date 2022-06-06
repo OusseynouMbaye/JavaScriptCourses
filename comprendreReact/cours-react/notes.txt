@@ -1,0 +1,13 @@
+
+besoin de react router dom et sass:
+npm  i -g react-router-dom sass : pour les avoir en globale
+npm  i  react-router-dom sass : pour les avoir dans les dependances
+
+Plug-ins à installer pour coder plus vite :
+
+Simple React snippets
+Reactjs code snippets
+Mithril Emmet
+Dans settings.json, rajouter :
+
+"emmet.includeLanguages": { "javascript": "javascriptreact" }, "emmet.triggerExpansionOnTab": true
